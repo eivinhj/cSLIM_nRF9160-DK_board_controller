@@ -1,33 +1,20 @@
-.. _hello_world:
+.. cSLIM nRF9160-DK Board Controller:
 
-Hello World
+cSLIM nRF9160-DK Board Controller
 ###########
 
 Overview
 ********
 
-A simple sample that can be used with any :ref:`supported board <boards>` and
-prints "Hello World" to the console.
+A board-controller for the cSLIM application, disabling DK LEDs and switches, and connecting the UART of nRF9160 through nRF52840.
 
 Building and Running
 ********************
 
-This application can be built and executed on QEMU as follows:
+This application can be built and executed as follows:
 
-.. zephyr-app-commands::
-   :zephyr-app: samples/hello_world
-   :host-os: unix
-   :board: qemu_x86
-   :goals: run
-   :compact:
+west build -b nRF9160dk_nRF52840 -p
 
-To build for another board, change "qemu_x86" above to that board's name.
+west flash
 
-Sample Output
-=============
-
-.. code-block:: console
-
-    Hello World! x86
-
-Exit QEMU by pressing :kbd:`CTRL+A` :kbd:`x`.
+Remember to switch to programing the nRF52840.
