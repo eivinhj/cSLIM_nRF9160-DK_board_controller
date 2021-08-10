@@ -1,0 +1,88 @@
+/ {
+	my_gipo {
+		compatible = "gpio-leds";
+		gpio14: gpio_14 {
+			gpios = <&gpio1 5 GPIO_ACTIVE_HIGH>;
+			label = "GPIO 5";
+		};
+		gpiovcom2: gpio_vcom2 {
+			gpios = <&gpio1 12 GPIO_ACTIVE_HIGH>;
+			label = "GPIO 12";
+		};
+	};
+
+	wlr089u0_gpio {
+		compatible = "gpio-leds";
+		wlr089u0nen: wlr089u0_nen {
+				gpios = <&gpio0 17 0>;
+				label = "WLR89U0 nSHDN";
+			};
+	};
+
+	aliases {
+		gpio14 = &gpio14;
+		uart1 = &uart1;
+		gpiovcom2 = &gpiovcom2;
+		wlr089u0nen = &wlr089u0nen;
+	};
+};
+
+&uart1 {
+	status = "okay";
+	current-speed = <115200>;
+	tx-pin = <20>;
+	rx-pin = <22>;
+	/delete-property/ rts-pin;
+    /delete-property/ cts-pin;
+};
+
+&vcom0_pins_routing {
+	status = "disabled";
+};
+
+&vcom2_pins_routing {
+	status = "disabled";
+};
+
+
+&led1_pin_routing {
+	status = "disabled";
+};
+&led2_pin_routing {
+	status = "disabled";
+};
+&led3_pin_routing {
+	status = "disabled";
+};
+&led4_pin_routing {
+	status = "disabled";
+};
+
+&switch1_pin_routing {
+	status = "disabled";
+};
+
+&switch2_pin_routing {
+	status = "disabled";
+};
+
+&button1_pin_routing {
+	status = "disabled";
+};
+
+&button2_pin_routing {
+	status = "disabled";
+};
+
+
+
+&nrf_interface_pins_0_2_routing {
+	status = "disabled";
+};
+&nrf_interface_pins_3_5_routing {
+	status = "okay";
+};
+
+&nrf_interface_pins_6_8_routing {
+	status = "disabled";
+};

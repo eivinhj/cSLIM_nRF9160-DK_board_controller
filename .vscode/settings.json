@@ -1,0 +1,7 @@
+{
+	"files.associations": {
+		"gpio.h": "c",
+		"cslim_uart1.h": "c",
+		"uart_fw_task.h": "c"
+	}
+}
